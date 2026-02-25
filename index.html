@@ -1141,7 +1141,7 @@
             <div class="contact-info">
               <div id="conv-phone-row">Phone : <span id="conv-phone">+92 (21) 99033-0000</span></div>
               <div id="conv-mobile-row">Mobile : <span id="conv-mobile">+92 3xx xxxxxxx</span></div>
-              <div id="conv-email-row">Email : <span id="conv-email">your.name@ubl.com.pk</span></div>
+              <div id="conv-email-row">Email : <span id="conv-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8a1b7adaaf6b6b9b5bd98adbab4f6bbb7b5f6a8b3">[email&#160;protected]</a></span></div>
             </div>
           </div>
           
@@ -1178,7 +1178,7 @@
             <div class="contact-info">
               <div id="ho-phone-row">Phone : <span id="ho-phone">+92 (21) 99033-0000</span></div>
               <div id="ho-mobile-row">Mobile : <span id="ho-mobile">+92 3xx xxxxxxx</span></div>
-              <div id="ho-email-row">Email : <span id="ho-email">your.name@ubl.com.pk</span></div>
+              <div id="ho-email-row">Email : <span id="ho-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2dbcdd7d08cccc3cfc7e2d7c0ce8cc1cdcf8cd2c9">[email&#160;protected]</a></span></div>
             </div>
           </div>
           
@@ -1220,7 +1220,7 @@
                   </div>
                   <div class="contact-item" id="isl-email-row">
                     <span class="contact-label">E-mail :</span>
-                    <span id="isl-email">your.name@ubl.com.pk</span>
+                    <span id="isl-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4553494e12525d51597c495e50125f5351124c57">[email&#160;protected]</a></span>
                   </div>
                 </div>
                 <div class="contact-right">
@@ -1238,7 +1238,7 @@
       <div class="order-info" id="orderInfo">
         <div class="order-info-header no-print">
           <strong>📋 Important Instructions:</strong> <br>
-          Please fill this form with accurate information and have it signed from approver hierarchy. Afterward, share scan copy of this form to Group ID <strong>(stationery.requisition@ubl.com.pk)</strong> for printing.
+          Please fill this form with accurate information and have it signed from approver hierarchy. Afterward, share scan copy of this form to Group ID <strong>(<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="15666174617c7a7b70676c3b677064607c667c617c7a7b556077793b767a783b657e">[email&#160;protected]</a>)</strong> for printing.
           <br><br>
           Also, please review your card sample with this form as the same will be considered for final printing.
         </div>
@@ -1313,7 +1313,7 @@
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     let currentTemplate = 'conventional';
 
     // Base required fields (common to all templates)
@@ -1914,6 +1914,20 @@ Submit to: stationery.requisition@ubl.com.pk
         setTimeout(() => notification.remove(), 300);
       }, 3000);
     }
+
+    // Block Ctrl+P / Cmd+P until all fields are valid
+    document.addEventListener('keydown', function(e) {
+      // Check if Ctrl+P (Windows/Linux) or Cmd+P (Mac) is pressed
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        if (!validateAllFields()) {
+          e.preventDefault();
+          e.stopPropagation();
+          showNotification('⚠️ Please fill all required fields before printing', 'error');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return false;
+        }
+      }
+    }, true);
 
     // Initialize on page load
     window.addEventListener('load', function() {
